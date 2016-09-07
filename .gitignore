@@ -1,0 +1,48 @@
+/*
+Demostration of 2D arrays
+Developer : Shyanaka Rama
+*/
+
+#include <iostream> 
+#include <iomanip>
+using namespace std;
+
+
+const int COLS = 4;
+const int tbl1_row = 3;
+const int tbl2_row = 4;
+void showArray (const int [][COLS], int);
+
+
+int main()
+{
+    int table1[tbl1_row][COLS] = {
+                                    {1,2,3,4},
+                                    {5,6,7,8},
+                                    {9,10,11,12}
+                                 };
+    int table2[tbl2_row][COLS] = {
+                                    {5,10,15,20},
+                                    {25,30,35,40},
+                                    {45,50,55,60},
+                                    {65,70,75,80}
+                                 };
+    showArray (table1,tbl1_row);
+    cout << "\n "<<endl;
+    showArray (table2,tbl2_row);
+
+    
+    return 0;
+}
+
+void showArray (const int array[][COLS], int rows)
+{
+    for(int x=0; x<rows; x++)
+    {
+        for(int y=0; y<COLS; y++)
+        {
+            cout << setw(5)<<array[x][y]<<" ";
+        }
+        cout << endl;
+    }
+}
